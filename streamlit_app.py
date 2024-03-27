@@ -42,7 +42,8 @@ if time_to_insert:
 #new section to display frutyvice
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response.json())
-
+#st.text(fruityvice_response.json())
+#to get the json in a tabular format
+fv_df = st.dataframe(data=fruityvice_response.json(),use_container_width=True)
 
 
