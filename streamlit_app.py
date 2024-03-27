@@ -39,6 +39,10 @@ if time_to_insert:
         
     st.success('Your "{}" named Smoothie is ordered!'.format(name_on_order), icon="✅")
 
+#new section to display frutyvice
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+st.text(fruityvice_response.json())
+
+
+
