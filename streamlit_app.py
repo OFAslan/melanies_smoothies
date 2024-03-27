@@ -26,7 +26,8 @@ if ingredients_list: #if it is null, it wont return anything,
     ingredients_string = ''
     for each_fruit in ingredients_list:
         ingredients_string += each_fruit + ' '
-        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        st.subheader(each_fruit + ' Nutrition Information')
+        fruityvice_response = requests.get("https://fruityvice.com/api/fruit/each_fruit")
         fv_df = st.dataframe(data=fruityvice_response.json(),use_container_width=True)
 
     my_insert_stmt = """ insert into smoothies.public.orders(ingredients,name_on_order)
